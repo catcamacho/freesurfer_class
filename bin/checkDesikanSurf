@@ -1,0 +1,19 @@
+#! /bin/csh
+#
+# Usage: checkAseg sub1 sub2 sub3
+
+set bin = ~/freesurfer_class/bin #path to repo bin
+setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+
+foreach sub ($argv)
+
+	echo "----------------------------------------------"
+	echo
+	echo "Checking Desikan-Killany surfaces for "$sub
+	echo
+	freeview -viewport 3d -zoom 1 -f $SUBJECTS_DIR/$sub/surf/lh.pial:annot=aparc.annot:name=pial_aparc \
+						$SUBJECTS_DIR/$sub/surf/rh.pial:annot=aparc.annot:name=pial_aparc &
+	echo
+	echo "----------------------------------------------"
+
+end

@@ -1,0 +1,34 @@
+#! /bin/csh
+
+# Usage: preproc_T1w subjectFolder [subjectFolder subjectFolder...]
+# subjectFolder =  the subject's folder name (e.g. 001-T1). Multiple can be entered at once.
+
+setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+set rawfp = /raw/data/path  #change to raw data filepath
+
+foreach sub ($argv)
+
+set rawdata = ${rawfp}/${sub}/anatomics/spgr/spgr.nii.gz #change to T1w scan location
+
+if (-e $rawdata) then
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+	echo '***************** Working on subject '$sub'********************* '
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+
+	recon-all -s $sub -i $rawdata -autorecon1
+
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+	echo '****************** finished subject '$sub'********************** '
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+else
+	echo
+	echo '>> WARNIING:'$sub' not found <<' 
+	echo '>> WARNIING:'$sub' not found <<' >> $SUBJECTS_DIR/log.txt
+	echo 
+endif
+end
+end

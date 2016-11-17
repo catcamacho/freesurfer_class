@@ -1,0 +1,19 @@
+#! /bin/tcsh
+#
+# Usage: checkAseg sub1 sub2 sub3
+
+set bin = ~/freesurfer_class/bin #path to repo bin
+setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+
+foreach sub ($argv)
+
+	echo "----------------------------------------------"
+	echo
+	echo "Checking segmentation for "$sub
+	echo
+	freeview -viewport z -zoom 1.45 -v $SUBJECTS_DIR/$sub/mri/brainmask.mgz -v $SUBJECTS_DIR/$sub/mri/aseg.mgz:colormap=lut:lut=$bin/lut.txt:opacity=.15 & 
+	echo
+	echo "----------------------------------------------"
+
+end
+end
