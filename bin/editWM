@@ -1,0 +1,27 @@
+#! /bin/csh -f
+
+#Usage: editWM subjectFolder
+
+set bin = ~/freesurfer_class/bin #path to repo bin
+setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+set sub = $argv[1]
+
+
+if( -e $SUBJECTS_DIR/$sub ) then        		
+	echo 
+	echo "found subject"
+	echo
+	echo Using $SUBJECTS_DIR/$sub
+	echo
+		tkmedit $sid brainmask.mgz lh.white -aux wm.mgz -aux-surface rh.white -tcl $bin/tkmedit_WMedits.tcl
+
+else
+	echo " Could not find "$sid," exiting."
+    exit 1;
+endif
+
+echo ""
+echo ""
+echo "Who's awesome? You're awesome!"
+echo ""
+echo ""

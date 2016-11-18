@@ -1,0 +1,44 @@
+#! /bin/csh -f
+#
+#Usage: applyWMedits subjectFolder
+
+
+setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+set sub = $argv[1]
+
+	
+if($foundSubject) then
+
+	#find how many edits have been applied and copy the brainmask and wm for record into next number
+	set version = 1;
+	set versionFound = 0;
+	set mriDir = $SUBJECTS_DIR/${sid}/mri
+	set surfDir = $SUBJECTS_DIR/${sid}/surf
+	while ($versionFound == 0)
+		set bmFile = ${mriDir}/brainmask.${version}.mgz
+		if ( ! -e $bmFile) then
+			echo entered right section
+			set versionFound = 1;
+		else
+			@ version = $version + 1;
+		endif
+	end
+
+	cp ${mriDir}/brainmask.mgz ${mriDir}/brainmask.${version}.mgz
+	cp ${mriDir}/wm.mgz ${mriDir}/wm.${version}.mgz
+	mv ${surfDir}/lh.pial ${surfDir}/lh.${version}.pial
+	mv ${surfDir}/rh.pial ${surfDir}/rh.${version}.pial
+	mv ${surfDir}/lh.white ${surfDir}/lh.${version}.white
+	mv ${surfDir}/rh.white ${surfDir}/rh.${version}.white	
+	rm  ${surfDir}/rh.inflated.K
+
+	recon-all -s $sid  -autorecon2-cp 
+
+	if ( -e ${surfDir}/rh.inflated.K) then		
+		echo "Edits for "$sub" applied successfully!"
+    else
+		echo "ERROR!! Edits for "$sub" failed to apply."
+	endif 
+
+endif 
+
