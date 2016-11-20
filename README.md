@@ -1,3 +1,3 @@
 # freesurfer_class
-Scripts and notes to ease use of FreeSurfer for anatomical MRI data processing. <br>
+Scripts and notes for FreeSurfer anatomical processing. <br>
 IN PROGRESS
