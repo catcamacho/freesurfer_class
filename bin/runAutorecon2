@@ -1,0 +1,28 @@
+#! /bin/csh -f
+#
+# Usage: regenSurfaces subjectFolder
+
+
+setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+
+set sub = $argv[1]	
+	
+	
+echo
+echo "****************************************************"
+echo
+echo "            Running autorecon2 for "$sub
+echo
+echo "****************************************************"
+
+recon-all -s $sub -autorecon2
+
+echo
+echo
+echo	
+if ( -e $SUBJECTS_DIR/$sub/scripts/recon-all.done) then
+	echo "Cortical surfaces for "$sub" generated successfully!"
+else
+	echo "ERROR!! Cortical surfaces for "$sub" failed to generate."
+endif
+

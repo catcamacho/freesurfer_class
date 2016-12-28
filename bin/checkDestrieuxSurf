@@ -11,10 +11,9 @@ foreach sub ($argv)
 	echo
 	echo "Checking Desikan-Killany surfaces for "$sub
 	echo
-	freeview -viewport 3d -zoom 1 -f $SUBJECTS_DIR/$sub/surf/lh.pial:annot=aparc.annot:name=pial_aparc \
-						$SUBJECTS_DIR/$sub/surf/rh.pial:annot=aparc.annot:name=pial_aparc &
+	freeview -viewport 3d -zoom 1 -f $SUBJECTS_DIR/$sub/surf/lh.pial:annot=aparc.a2009s.annot:name=pial_aparc \
+						$SUBJECTS_DIR/$sub/surf/rh.pial:annot=aparc.a2009s.annot:name=pial_aparc &
 	echo
 	echo "----------------------------------------------"
 
-end
 end

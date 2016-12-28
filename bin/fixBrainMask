@@ -27,7 +27,6 @@ endif
 
 tkmedit $sub brainmask.mgz -aux T1.mgz -tcl $bin/tkmedit_BMedit.tcl
 
-
 echo ""
 echo ""
 echo "Want to see an awesome person?"

@@ -1,55 +1,41 @@
 #! /bin/csh -f
 #
-#usage: els_fixTal [folderName]
+#usage: fixTal [folderName]
 #This script enables you to 1) fix the Talairach registration and 2) redo the skullstrip
 
-set sid = $argv[1]
+set sub = $argv[1]
 
-#find where the data is
-set found = 0;
+      		
+echo 
+echo "found subject"
+echo
+echo "Using "$SUBJECTS_DIR "/" $sub
+echo
+echo
+echo
+echo "--- ********* INSTRUCTIONS  **********  ---"
+echo ""	
+echo ""
+echo "---! Be sure to check all views!"
+echo "---> "
+echo ""
+echo "--- **********************************  ---"
+echo
+echo
+tkregister2 --mgz --s $sub --fstal 
+echo
+echo "Wait 15 seconds to redo skullstrip or hit CTL+C to cancel."
+sleep 15
+echo
+echo
+echo
 
-if ($found < 1) then
-	setenv SUBJECTS_DIR /Applications/freesurfer/subjects #change to your subjects dir
-	set found = 1;
-endif
+recon-all -s $sub -autorecon1 -clean-bm
 
-
-if( -$found ) then        		
-	echo 
-	echo "found subject"
-	echo
-	echo Using $SUBJECTS_DIR/$sid
-	echo
-	echo
-	echo
-	echo "--- ********* INSTRUCTIONS  **********  ---"
-	echo ""	
-	echo "---> "
-	echo "---> "
-	echo "---> "
-	echo ""
-	echo "---! Be sure to check all views!"
-	echo "---> "
-	echo ""
-	echo "--- **********************************  ---"
-	echo
-	echo
-tkregister2 --mgz --s $sid --fstal 
-	echo
-	echo "Wait 15 seconds to redo skullstrip or hit CTL+C to cancel."
-	sleep 15
-	echo
-	echo
-	echo
-
-recon-all -s $sid -autorecon1 -clean-bm
-
-if (-e $SUBJECTS_DIR/$sid/mri/brainmask.mgz) then
+if (-e $SUBJECTS_DIR/$sub/mri/brainmask.mgz) then
 	echo
 	echo
 	echo
 	echo "Don't forget to check the brainmask quality using fixBrainMask!"
 	echo "If the new brainmask looks good, be sure to run run_recon23 to regenerate the surfaces."
-endif
-
 endif

@@ -21,8 +21,8 @@ echo
 echo
 echo	
 if ( -e $SUBJECTS_DIR/$sub/scripts/recon-all.done) then
-	echo "Surfaces for "$sub" regenerated successfully!"
+	echo "Cortical segmentation for "$sub" generated successfully!"
 else
-	echo "ERROR!! Surfaces for "$sub" failed to generate."
+	echo "ERROR!! Cortical segmentation for "$sub" failed to generate."
 endif
 

@@ -32,7 +32,7 @@ if($foundSubject) then
 	mv ${surfDir}/rh.white ${surfDir}/rh.${version}.white	
 	rm  ${surfDir}/rh.inflated.K
 
-	recon-all -s $sid  -autorecon2-cp 
+	recon-all -s $sub  -autorecon2-cp 
 
 	if ( -e ${surfDir}/rh.inflated.K) then		
 		echo "Edits for "$sub" applied successfully!"

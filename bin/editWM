@@ -11,12 +11,12 @@ if( -e $SUBJECTS_DIR/$sub ) then
 	echo 
 	echo "found subject"
 	echo
-	echo Using $SUBJECTS_DIR/$sub
+	echo "Using "$SUBJECTS_DIR "/" $sub
 	echo
-		tkmedit $sid brainmask.mgz lh.white -aux wm.mgz -aux-surface rh.white -tcl $bin/tkmedit_WMedits.tcl
+		tkmedit $sub brainmask.mgz lh.white -aux wm.mgz -aux-surface rh.white -tcl $bin/tkmedit_WMedits.tcl
 
 else
-	echo " Could not find "$sid," exiting."
+	echo " Could not find "$sub"."
     exit 1;
 endif
 
