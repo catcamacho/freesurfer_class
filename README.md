@@ -1,5 +1,5 @@
 # Welcome to the Mood Lab FreeSurfer Class!
-This course is aimed to provide an overview of the FreeSurfer recon-all pipeline for T1w MRI processing. By the end of the 5-day course, users will hopefully be able to tackle common errors that typically arise from running adolescent samples and confidently use FreeSurfer tools and outputs for their own analyses. <br>
+This course aims to provide an overview of the FreeSurfer recon-all pipeline for T1w MRI processing. By the end of the 5-day course, users will hopefully be able to tackle common errors that typically arise from running adolescent samples and confidently use FreeSurfer tools and outputs for their own analyses. <br>
 <br>
 Main FreeSurfer website: http://www.freesurfer.net/ <br>
 Recon-all Table:https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllTableStableV5.3 <br>
