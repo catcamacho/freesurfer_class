@@ -1,0 +1,29 @@
+#! /bin/csh
+
+## To use this function, first edit the settings to fit your study. Next, open a terminal
+## and type "batch_reconall SUB1". Enter as many IDs as you'd like separated by a space.
+## This script will loop through them in order (e.g. batch_reconall SUB1 SUB2 SUB3)
+
+
+# Set these to the appropriate filepaths:
+setenv SUBJECTS_DIR /home/catcam1/FS_Class/subjDir #Your subjects output directory
+set rawfp = /path/to/raw/data #Path to all the subjects raw data (organized by ID)
+set T1w = /anatomics/spgr/T1w_9mm_sag_raw.nii.gz #Path to SPGR within each subject folder.
+set log = $SUBJECTS_DIR/batchlog.txt #Path to the log file (optional)
+
+
+foreach sub ($argv)
+
+	set rawT1w = $rawfp/$sub/$T1w
+	
+	recon-all -s $sub -i $rawT1w -all
+	
+	#Checks that freesurfer finished through autorecon3
+	if (-e $SUBJECTS_DIR/$sub/label/lh.entorhinal_exvivo.label) then
+		echo "------- recon-all ran successfully for " $sub >> $log
+	else
+		echo "WARNING!! recon-all may have exited with errors for " $sub >> $log
+	endif
+
+end
+end
