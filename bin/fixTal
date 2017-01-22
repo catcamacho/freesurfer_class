@@ -36,6 +36,6 @@ if (-e $SUBJECTS_DIR/$sub/mri/brainmask.mgz) then
 	echo
 	echo
 	echo
-	echo "Don't forget to check the brainmask quality using fixBrainMask!"
-	echo "If the new brainmask looks good, be sure to run run_recon23 to regenerate the surfaces."
+	echo "Don't forget to check the brainmask quality!"
+	echo "If the new brainmask looks good, be sure to run autorecon2 to regenerate the surfaces."
 endif
