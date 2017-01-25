@@ -5,7 +5,7 @@ Main FreeSurfer website: http://www.freesurfer.net/ <br>
 Recon-all Table:https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllTableStableV5.3 <br>
 Recon-all Wiki Page: https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all <br>
 <br>
-This respository is broken in to several parts: <br>
+This repository has several parts: <br>
 1. Class Syllabus: In the main folder you'll find this document with a summary of what to expect from the class as well as out schedule for Winter 2017. <br>
 2. Class Slides: After each Monday class I'll upload the slides from that week.  Be sure to review them for reinforcement! <br>
 3. Class Bin: Quick scripts and functions that I have written to make it easier to manually adjust the freesurfer recon-all pipeline.<br>
