@@ -4,8 +4,8 @@
 #This script enables you to 1) remove dura/skull and 2)add back in missing chunks of brain.
 
 set sub = $argv[1]
-set bin = ~/freesurfer_class/bin #path to repo bin
-setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+set bin = /Users/myelin/Dropbox/scripts/git_repos/freesurfer_class/bin #path to repo bin
+setenv SUBJECTS_DIR /Users/myelin/Desktop/FS_Class/5-3_subjDir/
 
 echo
 echo

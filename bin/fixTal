@@ -4,7 +4,7 @@
 #This script enables you to 1) fix the Talairach registration and 2) redo the skullstrip
 
 set sub = $argv[1]
-setenv SUBJECTS_DIR /Applications/freesurfer/subjects
+setenv SUBJECTS_DIR /Users/myelin/Desktop/FS_Class/5-3_subjDir/
       		
 echo 
 echo "found subject"

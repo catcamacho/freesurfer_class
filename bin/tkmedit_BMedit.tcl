@@ -26,7 +26,7 @@ SetEditBrushConfiguration
 SetCursorColor .7 0 1
 
 # Starting orientation (0=coronal 1=horizontal 2=sagittal)
-SetOrientation 1
+SetOrientation 2
 
 # Starting slice number
 SetSlice 100

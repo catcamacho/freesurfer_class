@@ -1,19 +1,19 @@
-function pullFreeSurferVolumes(subs)
+function pullFreeSurferVolumes
 %% This function pulls volumes from freesurfer-outputed aseg.stats files.
 % (units is mm^3) and saves the values as a labeled csv and as a .mat file. 
 % To use, simply type pullFreeSurferVolumes into the MATLAB command window. 
 % For studies other than MIG, you'll need to specify study-specifics in the 
 % following variables:
 
-studyName = 'FS_class'; %Label for your dataset
-studyfp = '/Users/catcamacho/Desktop/FS_Class/subjDir/'; %SUBJECTS_DIR filepath
+studyName = 'FSclass_20170509'; %Label for your dataset
+studyfp = '/Users/myelin/Desktop/FS_Class/5-3_subjDir/'; %SUBJECTS_DIR filepath
 fsStatsDir = '/stats'; %path to stats directory within each subject folder
 studyFolderPrefix = ''; %subject folder ID prefix if any (e.g. for folder MIG-2908, the prefix is 'MIG-')
 studyFolderSuffix = ''; %subject folder ID suffix if any (e.g. for folder 196_T1, the suffix is '_T1')
-outputDir = '/Users/catcamacho/Desktop/FS_Class/subjDir'; %where to save csv and mat file of results
+outputDir = '/Users/myelin/Desktop/FS_Class/5-3_subjDir'; %where to save csv and mat file of results
 
 % Then list the subject IDs you'd like to pull data from.
-%subs = {'Monica','Sophie','Meghan'};
+subs = {'Monica','Sophie','Meghan'};
 
 % Edit these to include more or fewer regions.  Defaults are usually pretty
 % comprehensive and reliable for most data.

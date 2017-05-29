@@ -1,0 +1,10 @@
+tkmedit started: Mon Apr 17 15:57:23 2017
+
+	tkmedit.bin Monica brainmask.mgz -aux T1.mgz -tcl /Users/myelin/Dropbox/scripts/git_repos/freesurfer_class/bin/tkmedit_BMedit.tcl 
+
+$Id: tkmedit.c,v 1.341.2.1 2010/08/04 20:47:28 greve Exp $ $Name: stable5 $
+Set user home dir to /Users/myelin/Dropbox/scripts/git_repos/freesurfer_class/bin
+Set subject home dir to /Users/myelin/Desktop/FS_Class/5-3_subjDir//Monica
+Using interface file /Applications/freesurfer/lib/tcl/tkmedit.tcl
+Tcl: Successfully parsed tkmedit.tcl
+Tcl: Successfully parsed tkm_functional.tcl
